@@ -21,7 +21,7 @@
       browseLabel: 'ИЗДӨӨНҮ БАШТА', categoriesTitle: 'Эмне керек болуп жатат?', allOffers: 'Бардык сунуштар', catProducts: 'Товарлар', catProductsHint: 'Сатып алуу жана сатуу', catDeals: 'Арзандатуулар', catDealsHint: 'Пайдалуу баалар', catJobs: 'Жумуш', catJobsHint: 'Жаңы мүмкүнчүлүктөр', catServices: 'Кызматтар', catServicesHint: 'Адистерди табыңыз',
       freshLabel: 'ЖАҢЫ МҮМКҮНЧҮЛҮКТӨР', offersTitle: 'Пайдалуу сунуштар', offersSubtitle: 'Өзүңүзгө керектүүсүн табыңыз же бааларды салыштырыңыз.', favorites: 'Сакталгандар', demoNotice: 'Бул версияда көрсөтүлгөн жарыялар — демонстрация үчүн. Азырынча чыныгы сатуучу же жумуш берүүчү менен байланышпайт.', filterAll: 'Баары', filterDeals: 'Арзандатуулар', filterProducts: 'Товарлар', filterJobs: 'Жумуш', filterServices: 'Кызматтар', sortLabel: 'Иреттөө:', sortNewest: 'Жаңылары', sortLow: 'Баасы төмөндөн', sortHigh: 'Баасы жогорудан', resultWord: 'сунуш', emptyTitle: 'Азырынча эч нерсе табылган жок', emptyText: 'Издөө сөзүн же аймакты өзгөртүп көрүңүз.', resetButton: 'Чыпкаларды тазалоо', showMore: 'Дагы көрүү', showLess: 'Аз көрсөтүү',
       regionsKicker: 'ӨЗҮҢҮЗГӨ ЖАКЫН', regionsTitle: 'Кыргызстандын кайсы жеринде болбоңуз', regionsText: 'Аймагыңызды тандап, өзүңүзгө жакын сунуштарды караңыз.', howKicker: 'ЖӨНӨКӨЙ БАШТАЛЫШ', howTitle: 'Үч кадам. Керектүү нерсе табылды.', stepOneTitle: 'Издеңиз', stepOneText: 'Керектүү товарды, сунушту же кызматты жазыңыз.', stepTwoTitle: 'Салыштырыңыз', stepTwoText: 'Аймак жана категория боюнча ылайыктуу варианттарды табыңыз.', stepThreeTitle: 'Сактаңыз', stepThreeText: 'Жаккан сунуштарды сактап коюңуз. Бул демо версияда алар түзмөгүңүздө сакталат.', ctaKicker: 'ӨЗҮҢҮЗДҮН СУНУШУҢУЗ БАРБЫ?', ctaTitle: 'Башкаларга да пайдалуу болсун.', ctaText: 'Товар, жумуш же кызмат жөнүндө жарыя кошуп көрүңүз. Демо режимде ал ушул түзмөктө гана сакталат.', ctaTagOne: 'Товарлар', ctaTagTwo: 'Жумуш', ctaTagThree: 'Кызматтар',
-      footerDescription: 'Кыргызстан үчүн пайдалуу мүмкүнчүлүктөрдү бир жерге чогултуучу платформа.', footerPlatform: 'Платформа', footerImportant: 'Маанилүү', footerSafety: 'Коопсуз колдонуу', footerAbout: 'Долбоор жөнүндө', footerDemo: 'Азыркы версия — прототип. Чыныгы жарыяларды жарыялоо үчүн сервер, маалымат базасы жана модерация керек.', footerTagline: 'Тап. Салыштыр. Үнөмдө.', prototypeLabel: 'ДЕМО ВЕРСИЯ', formKicker: 'ЖАҢЫ ЖАРЫЯ', formTitle: 'Жарыя кошуу', formDescription: 'Бул прототипте жарыя ушул түзмөктө гана сакталат. Кийин сервер кошулганда, жалпыга жарыялоо мүмкүн болот.', formName: 'Жарыянын аталышы', formNamePlaceholder: 'Мисалы: Блендер сатылат', formCategory: 'Категория', formPrice: 'Баасы (сом)', formRegion: 'Шаар же аймак', formDescriptionLabel: 'Кыскача маалымат', formDescriptionPlaceholder: 'Жарыя жөнүндө кыскача жазыңыз...', formNotice: 'Телефон номери же жеке маалымат жазбаңыз. Бул демо маалымат башка адамдарга көрүнбөйт.', formSubmit: 'Демо жарыяны сактоо', demoBadge: 'ДЕМО', detailNote: 'Бул мисал жарыясы. Ал чыныгы сунуш эмес жана сатуучу менен байланышпайт.', saveOffer: 'Сактоо', savedOffer: 'Сакталды', removedFavorite: 'Сакталгандардан алынды', savedToast: 'Жарыя ушул түзмөктө сакталды. Башкаларга көрсөтүү үчүн сервер керек.', requiredFields: 'Милдеттүү талааларды толтуруңуз.', searchNoResults: 'Бул издөө боюнча сунуш табылган жок.', favoritesEmpty: 'Азырынча сакталган сунуш жок.', defaultLocation: 'Кыргызстан', priceOnRequest: 'Баасы сүйлөшүлөт', perShift: '/ смена', from: 'баштап',
+      footerDescription: 'Кыргызстан үчүн пайдалуу мүмкүнчүлүктөрдү бир жерге чогултуучу платформа.', footerPlatform: 'Платформа', footerImportant: 'Маанилүү', footerSafety: 'Коопсуз колдонуу', footerAbout: 'Долбоор жөнүндө', footerDemo: 'Азыркы версия — прототип. Чыныгы жарыяларды жарыялоо үчүн сервер, маалымат базасы жана модерация керек.', footerTagline: 'Тап. Салыштыр. Үнөмдө.', prototypeLabel: 'ДЕМО ВЕРСИЯ', formKicker: 'ЖАҢЫ ЖАРЫЯ', formTitle: 'Жарыя кошуу', formDescription: 'Бул прототипте жарыя ушул түзмөктө гана сакталат. Кийин сервер кошулганда, жалпыга жарыялоо мүмкүн болот.', formName: 'Жарыянын аталышы', formNamePlaceholder: 'Мисалы: Блендер сатылат', formCategory: 'Категория', formPrice: 'Баасы (сом)', formRegion: 'Шаар же аймак', formDescriptionLabel: 'Кыскача маалымат', formDescriptionPlaceholder: 'Жарыя жөнүндө кыскача жазыңыз...', formImages: 'Сүрөттөр (5ке чейин)', formImagesHint: 'JPG, PNG же WebP. Ар бири 3 МБ чейин.', formNotice: 'Телефон номери же жеке маалымат жазбаңыз. Бул демо маалымат башка адамдарга көрүнбөйт.', formSubmit: 'Демо жарыяны сактоо', demoBadge: 'ДЕМО', detailNote: 'Бул мисал жарыясы. Ал чыныгы сунуш эмес жана сатуучу менен байланышпайт.', saveOffer: 'Сактоо', savedOffer: 'Сакталды', removedFavorite: 'Сакталгандардан алынды', savedToast: 'Жарыя ушул түзмөктө сакталды. Башкаларга көрсөтүү үчүн сервер керек.', requiredFields: 'Милдеттүү талааларды толтуруңуз.', searchNoResults: 'Бул издөө боюнча сунуш табылган жок.', favoritesEmpty: 'Азырынча сакталган сунуш жок.', defaultLocation: 'Кыргызстан', priceOnRequest: 'Баасы сүйлөшүлөт', perShift: '/ смена', from: 'баштап',
       typeLabels: {deal:'Арзандатуу',product:'Товар',job:'Жумуш',service:'Кызмат'}, cardTypes: {deal:'АРЗАНДАТУУ',product:'ТОВАР',job:'ЖУМУШ',service:'КЫЗМАТ'}, publishedBadge:'ЖАРЫЯЛАНДЫ', publishedMeta:'Жарыяланды', exampleMeta:'Мисал'
     },
     ru: {
@@ -30,7 +30,7 @@
       browseLabel: 'НАЧНИТЕ ПОИСК', categoriesTitle: 'Что вам нужно?', allOffers: 'Все предложения', catProducts: 'Товары', catProductsHint: 'Покупка и продажа', catDeals: 'Скидки', catDealsHint: 'Выгодные цены', catJobs: 'Работа', catJobsHint: 'Новые возможности', catServices: 'Услуги', catServicesHint: 'Найдите специалистов',
       freshLabel: 'НОВЫЕ ВОЗМОЖНОСТИ', offersTitle: 'Полезные предложения', offersSubtitle: 'Находите нужное или сравнивайте цены.', favorites: 'Сохранённое', demoNotice: 'Объявления в этой версии демонстрационные. Сейчас они не связаны с реальными продавцами или работодателями.', filterAll: 'Все', filterDeals: 'Скидки', filterProducts: 'Товары', filterJobs: 'Работа', filterServices: 'Услуги', sortLabel: 'Сортировка:', sortNewest: 'Сначала новые', sortLow: 'Сначала дешевле', sortHigh: 'Сначала дороже', resultWord: 'предложений', emptyTitle: 'Пока ничего не найдено', emptyText: 'Попробуйте изменить запрос или регион.', resetButton: 'Сбросить фильтры', showMore: 'Показать ещё', showLess: 'Свернуть',
       regionsKicker: 'РЯДОМ С ВАМИ', regionsTitle: 'Где бы вы ни находились в Кыргызстане', regionsText: 'Выберите регион и просмотрите предложения поблизости.', howKicker: 'ПРОСТОЕ НАЧАЛО', howTitle: 'Три шага. Нужное найдено.', stepOneTitle: 'Ищите', stepOneText: 'Введите товар, предложение или услугу, которая вам нужна.', stepTwoTitle: 'Сравнивайте', stepTwoText: 'Находите подходящие варианты по региону и категории.', stepThreeTitle: 'Сохраняйте', stepThreeText: 'Добавляйте понравившиеся предложения в избранное. В демо-версии они хранятся на вашем устройстве.', ctaKicker: 'ЕСТЬ ЧТО ПРЕДЛОЖИТЬ?', ctaTitle: 'Пусть это пригодится другим.', ctaText: 'Попробуйте добавить товар, работу или услугу. В демо-режиме объявление сохранится только на этом устройстве.', ctaTagOne: 'Товары', ctaTagTwo: 'Работа', ctaTagThree: 'Услуги',
-      footerDescription: 'Платформа полезных возможностей для жителей Кыргызстана.', footerPlatform: 'Платформа', footerImportant: 'Важно', footerSafety: 'Безопасное использование', footerAbout: 'О проекте', footerDemo: 'Текущая версия — прототип. Для публикации реальных объявлений нужны сервер, база данных и модерация.', footerTagline: 'Найдите. Сравните. Сэкономьте.', prototypeLabel: 'ДЕМО-ВЕРСИЯ', formKicker: 'НОВОЕ ОБЪЯВЛЕНИЕ', formTitle: 'Добавить объявление', formDescription: 'В этом прототипе объявление сохраняется только на этом устройстве. После подключения сервера его можно будет публиковать для всех.', formName: 'Название объявления', formNamePlaceholder: 'Например: Продаю блендер', formCategory: 'Категория', formPrice: 'Цена (сом)', formRegion: 'Город или регион', formDescriptionLabel: 'Краткое описание', formDescriptionPlaceholder: 'Кратко опишите предложение...', formNotice: 'Не указывайте номер телефона или личные данные. Это демо-объявление не будет видно другим людям.', formSubmit: 'Сохранить демо-объявление', demoBadge: 'ДЕМО', detailNote: 'Это пример объявления. Оно не является реальным предложением и не связано с продавцом.', saveOffer: 'Сохранить', savedOffer: 'Сохранено', removedFavorite: 'Удалено из сохранённого', savedToast: 'Объявление сохранено на этом устройстве. Чтобы показывать его другим, нужен сервер.', requiredFields: 'Заполните обязательные поля.', searchNoResults: 'По этому запросу предложений не найдено.', favoritesEmpty: 'Пока нет сохранённых предложений.', defaultLocation: 'Кыргызстан', priceOnRequest: 'Цена договорная', perShift: '/ смена', from: 'от',
+      footerDescription: 'Платформа полезных возможностей для жителей Кыргызстана.', footerPlatform: 'Платформа', footerImportant: 'Важно', footerSafety: 'Безопасное использование', footerAbout: 'О проекте', footerDemo: 'Текущая версия — прототип. Для публикации реальных объявлений нужны сервер, база данных и модерация.', footerTagline: 'Найдите. Сравните. Сэкономьте.', prototypeLabel: 'ДЕМО-ВЕРСИЯ', formKicker: 'НОВОЕ ОБЪЯВЛЕНИЕ', formTitle: 'Добавить объявление', formDescription: 'В этом прототипе объявление сохраняется только на этом устройстве. После подключения сервера его можно будет публиковать для всех.', formName: 'Название объявления', formNamePlaceholder: 'Например: Продаю блендер', formCategory: 'Категория', formPrice: 'Цена (сом)', formRegion: 'Город или регион', formDescriptionLabel: 'Краткое описание', formDescriptionPlaceholder: 'Кратко опишите предложение...', formImages: 'Фотографии (до 5)', formImagesHint: 'JPG, PNG или WebP. До 3 МБ каждый файл.', formNotice: 'Не указывайте номер телефона или личные данные. Это демо-объявление не будет видно другим людям.', formSubmit: 'Сохранить демо-объявление', demoBadge: 'ДЕМО', detailNote: 'Это пример объявления. Оно не является реальным предложением и не связано с продавцом.', saveOffer: 'Сохранить', savedOffer: 'Сохранено', removedFavorite: 'Удалено из сохранённого', savedToast: 'Объявление сохранено на этом устройстве. Чтобы показывать его другим, нужен сервер.', requiredFields: 'Заполните обязательные поля.', searchNoResults: 'По этому запросу предложений не найдено.', favoritesEmpty: 'Пока нет сохранённых предложений.', defaultLocation: 'Кыргызстан', priceOnRequest: 'Цена договорная', perShift: '/ смена', from: 'от',
       typeLabels: {deal:'Скидка',product:'Товар',job:'Работа',service:'Услуга'}, cardTypes: {deal:'СКИДКА',product:'ТОВАР',job:'РАБОТА',service:'УСЛУГА'}, publishedBadge:'ОПУБЛИКОВАНО', publishedMeta:'Опубликовано', exampleMeta:'Пример'
     }
   };
@@ -152,9 +152,10 @@
     const location = esc(item.city || item.region || t('defaultLocation'));
     const publishedBadge = item.isRemote ? `<span class="listing-type-pill published">${esc(t('publishedBadge'))}</span>` : `<span class="listing-type-pill demo">${esc(t('demoBadge'))}</span>`;
     const metaLabel = item.isRemote ? t('publishedMeta') : t('exampleMeta');
+    const firstImage = Array.isArray(item.images) && item.images[0] ? `<img class="listing-photo" src="${esc(item.images[0])}" alt="${detailTitle}" loading="lazy" decoding="async">` : '';
     return `<article class="listing-card" data-id="${esc(item.id)}" tabindex="0" role="button" aria-label="${detailTitle}">
       <div class="listing-art ${esc(item.art || ({deal:'art-deal',product:'art-product',job:'art-job',service:'art-service'}[item.type] || 'art-product'))}">
-        <span class="listing-type-pill">${esc(typeLabel)}</span>${publishedBadge}<span class="listing-emoji" aria-hidden="true">${esc(item.emoji || '📌')}</span>
+        ${firstImage}<span class="listing-type-pill">${esc(typeLabel)}</span>${publishedBadge}<span class="listing-emoji ${firstImage?'hidden':''}" aria-hidden="true">${esc(item.emoji || '📌')}</span>
         <button type="button" class="favorite-btn ${isSaved?'saved':''}" data-favorite="${esc(item.id)}" aria-label="${isSaved ? esc(t('removedFavorite')) : esc(t('saveOffer'))}" aria-pressed="${isSaved}">${isSaved?'♥':'♡'}</button>
       </div>
       <div class="listing-body"><div class="listing-meta"><span class="listing-location"><span>⌖</span>${location}</span><span>${esc(metaLabel)}</span></div><h3>${detailTitle}</h3><p class="listing-card-description">${detailDescription}</p><div class="listing-price-row">${formatPrice(item)}<button class="listing-open" type="button" data-open-detail="${esc(item.id)}" aria-label="${lang==='ky'?'Көбүрөөк маалымат':'Подробнее'}">↗</button></div></div></article>`;
@@ -212,6 +213,12 @@
     $('#detailDescription').textContent = getDescription(item);
     $('#detailEmoji').textContent = item.emoji || '📌';
     $('#detailArt').className = `detail-art ${item.art || ''}`;
+    const detailImage = $('#detailImage');
+    const detailImageUrl = Array.isArray(item.images) && item.images[0] ? item.images[0] : '';
+    detailImage.classList.toggle('hidden', !detailImageUrl);
+    $('#detailEmoji').classList.toggle('hidden', !!detailImageUrl);
+    if (detailImageUrl) { detailImage.src = detailImageUrl; detailImage.alt = getTitle(item); }
+    else detailImage.removeAttribute('src');
     const note = $('#detailInfoNote');
     note.classList.toggle('hidden', !!item.isRemote);
     $('#detailModal [data-i18n="demoBadge"]').textContent = item.isRemote ? t('publishedBadge') : t('demoBadge');
@@ -236,6 +243,7 @@
       region: String(row.region || row.city || ''),
       emoji: ({ deal:'🏷️', product:'📦', job:'💼', service:'🛠️' })[type],
       art: ({ deal:'art-deal', product:'art-product', job:'art-job', service:'art-service' })[type],
+      images: Array.isArray(row.images) ? row.images.filter(value => typeof value === 'string' && /^https:\/\//i.test(value)).slice(0, 5) : [],
       date: row.created_at ? (Date.parse(row.created_at) || 0) : 0
     };
   }
@@ -280,6 +288,39 @@
   $$('[data-close-modal]').forEach(btn => btn.addEventListener('click', closeModals));
   $$('.modal-backdrop').forEach(backdrop => backdrop.addEventListener('click', event => { if (event.target === backdrop) closeModals(); }));
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModals(); });
+  let imagePreviewUrls = [];
+  function clearImagePreviewUrls() {
+    imagePreviewUrls.forEach(url => URL.revokeObjectURL(url));
+    imagePreviewUrls = [];
+  }
+  function renderImagePreview() {
+    clearImagePreviewUrls();
+    const container = $('#imagePreview');
+    container.innerHTML = '';
+    const files = Array.from($('#newImages').files || []).slice(0, 5);
+    files.forEach(file => {
+      const url = URL.createObjectURL(file);
+      imagePreviewUrls.push(url);
+      const item = document.createElement('div');
+      item.className = 'image-preview-item';
+      const image = document.createElement('img');
+      image.src = url;
+      image.alt = file.name;
+      image.loading = 'lazy';
+      const label = document.createElement('span');
+      label.textContent = `${file.name} · ${(file.size / (1024 * 1024)).toFixed(1)} МБ`;
+      item.append(image, label);
+      container.append(item);
+    });
+  }
+  $('#newImages').addEventListener('change', () => {
+    renderImagePreview();
+    const files = Array.from($('#newImages').files || []);
+    if (files.length > 5) showToast(lang === 'ky' ? '5ке чейин гана сүрөт тандаңыз.' : 'Выберите не более 5 фотографий.');
+    else if (files.some(file => !['image/jpeg','image/png','image/webp'].includes(file.type))) showToast(lang === 'ky' ? 'JPG, PNG же WebP сүрөт гана кабыл алынат.' : 'Допускаются только JPG, PNG или WebP.');
+    else if (files.some(file => file.size > 3 * 1024 * 1024)) showToast(lang === 'ky' ? 'Ар бир сүрөт 3 МБдан ашпашы керек.' : 'Размер каждого фото не должен превышать 3 МБ.');
+  });
+
   $('#listingForm').addEventListener('submit', async event => {
     event.preventDefault();
     const title = $('#newTitle').value.trim();
@@ -290,6 +331,10 @@
     const description = $('#newDescription').value.trim();
     if (!title || priceRaw === '' || !city || !type || !Number.isFinite(price) || price < 0) { showToast(t('requiredFields')); return; }
     const regionMap = {'Бишкек':'Бишкек','Ош':'Ош','Жалал-Абад':'Жалал-Абад','Ысык-Көл':'Ысык-Көл','Чүй':'Чүй','Нарын':'Нарын','Талас':'Талас','Баткен':'Баткен'};
+    const imageFiles = Array.from($('#newImages').files || []);
+    if (imageFiles.length > 5) { showToast(lang === 'ky' ? '5ке чейин гана сүрөт тандаңыз.' : 'Выберите не более 5 фотографий.'); return; }
+    if (imageFiles.some(file => !['image/jpeg','image/png','image/webp'].includes(file.type))) { showToast(lang === 'ky' ? 'JPG, PNG же WebP сүрөт гана кабыл алынат.' : 'Допускаются только JPG, PNG или WebP.'); return; }
+    if (imageFiles.some(file => file.size > 3 * 1024 * 1024)) { showToast(lang === 'ky' ? 'Ар бир сүрөт 3 МБдан ашпашы керек.' : 'Размер каждого фото не должен превышать 3 МБ.'); return; }
     if (API_ENABLED) {
       const submitButton = $('#listingForm button[type="submit"]');
       submitButton.disabled = true;
@@ -301,10 +346,37 @@
         });
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
-        closeModals(); $('#listingForm').reset();
-        showToast(lang === 'ky'
-          ? 'Жарыя текшерүүгө жөнөтүлдү. Жактырылгандан кийин сайтта көрүнөт.'
-          : 'Объявление отправлено на проверку. Оно появится на сайте после одобрения.');
+
+        let uploaded = 0;
+        const uploadErrors = [];
+        for (const file of imageFiles) {
+          try {
+            const imageResponse = await fetch(`${API_BASE}/api/listings/${encodeURIComponent(data.id)}/images`, {
+              method: 'POST',
+              headers: { 'Content-Type': file.type, 'Accept': 'application/json' },
+              body: file
+            });
+            const imageData = await imageResponse.json().catch(() => ({}));
+            if (!imageResponse.ok) throw new Error(imageData.error || `HTTP ${imageResponse.status}`);
+            uploaded++;
+          } catch (imageError) {
+            uploadErrors.push(imageError && imageError.message ? imageError.message : 'Upload failed');
+          }
+        }
+
+        closeModals();
+        $('#listingForm').reset();
+        renderImagePreview();
+        if (uploadErrors.length) {
+          console.warn('Some PAIDA KG listing images could not be uploaded:', uploadErrors);
+          showToast(lang === 'ky'
+            ? `Жарыя текшерүүгө жөнөтүлдү. Сүрөттөрдүн ${uploaded}/${imageFiles.length} гана жүктөлдү.`
+            : `Объявление отправлено на проверку. Загружено фото: ${uploaded} из ${imageFiles.length}.`);
+        } else {
+          showToast(lang === 'ky'
+            ? `Жарыя текшерүүгө жөнөтүлдү${uploaded ? `. Сүрөттөр: ${uploaded}` : ''}. Жактырылгандан кийин сайтта көрүнөт.`
+            : `Объявление отправлено на проверку${uploaded ? `. Фото: ${uploaded}` : ''}. Оно появится на сайте после одобрения.`);
+        }
         $('#offers').scrollIntoView({behavior:'smooth',block:'start'});
       } catch (error) {
         console.error('PAIDA KG submit failed:', error);
@@ -316,7 +388,7 @@
       return;
     }
     const item = {id:`user-${Date.now()}`,type,title:{ky:title,ru:title},description:{ky:description || 'Демо жарыя.',ru:description || 'Демо-объявление.'},price,unit:{ky:'бир даана',ru:'за штуку'},city,region:regionMap[city] || city,emoji:({deal:'🏷️',product:'📦',job:'💼',service:'🛠️'})[type],art:({deal:'art-deal',product:'art-product',job:'art-job',service:'art-service'})[type],date:Date.now(),isUser:true};
-    userListings.unshift(item); saveListings(); closeModals(); $('#listingForm').reset(); activeFilter='all'; favoritesOnly=false; visibleLimit=8; $$('.filter-tab').forEach(btn=>btn.classList.toggle('active',btn.dataset.filter==='all')); $('#searchInput').value=''; $('#regionSelect').value='all'; renderListings(); showToast(t('savedToast')); $('#offers').scrollIntoView({behavior:'smooth',block:'start'});
+    userListings.unshift(item); saveListings(); closeModals(); $('#listingForm').reset(); renderImagePreview(); activeFilter='all'; favoritesOnly=false; visibleLimit=8; $$('.filter-tab').forEach(btn=>btn.classList.toggle('active',btn.dataset.filter==='all')); $('#searchInput').value=''; $('#regionSelect').value='all'; renderListings(); showToast(imageFiles.length ? (lang === 'ky' ? 'Демо жарыя сакталды, бирок сүрөттөр серверге жүктөлгөн жок.' : 'Демо-объявление сохранено, но фото не загружены на сервер.') : t('savedToast')); $('#offers').scrollIntoView({behavior:'smooth',block:'start'});
   });
   $('#mobileMenuBtn').addEventListener('click', () => { const nav=$('#mobileNav'); const open=nav.classList.toggle('open'); $('#mobileMenuBtn').setAttribute('aria-expanded',String(open)); $('#mobileMenuBtn').textContent=open?'×':'☰'; });
   $$('#mobileNav a').forEach(a=>a.addEventListener('click',()=>{ $('#mobileNav').classList.remove('open'); $('#mobileMenuBtn').setAttribute('aria-expanded','false'); $('#mobileMenuBtn').textContent='☰'; }));
