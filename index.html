@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ky">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#103c32">
+  <meta name="description" content="Кыргызстан боюнча пайдалуу сунуштарды, товарларды, жумушту жана кызматтарды бир жерден табыңыз.">
+  <title>PAIDA KG — Пайдалуу нерсенин баары</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">
+    <div class="announcement-inner">
+      <span class="announcement-dot"></span>
+      <span data-i18n="topline">Кыргызстан боюнча пайдалуу сунуштар — бир жерден</span>
+      <span class="announcement-tag" data-i18n="freeSearch">Издөө акысыз</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="PAIDA KG башкы бет">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 10.5A4.5 4.5 0 0 1 12.5 6h12A10.5 10.5 0 0 1 35 16.5 10.5 10.5 0 0 1 24.5 27H18v7H8V10.5Z" fill="currentColor"/><path d="M18 14h6.2a2.8 2.8 0 1 1 0 5.6H18V14Z" fill="#d6f36a"/></svg></span>
+        <span class="brand-word">PAIDA<span>KG</span></span>
+      </a>
+
+      <div class="header-location">
+        <span class="location-pin">⌖</span>
+        <label class="sr-only" for="regionSelect" data-i18n="chooseRegion">Аймакты тандаңыз</label>
+        <select id="regionSelect" aria-label="Аймак">
+          <option value="all" data-i18n="allKyrgyzstan">Бүт Кыргызстан</option>
+          <option value="Бишкек">Бишкек</option>
+          <option value="Ош">Ош</option>
+          <option value="Жалал-Абад">Жалал-Абад</option>
+          <option value="Ысык-Көл">Ысык-Көл</option>
+          <option value="Чүй">Чүй</option>
+          <option value="Нарын">Нарын</option>
+          <option value="Талас">Талас</option>
+          <option value="Баткен">Баткен</option>
+        </select>
+      </div>
+
+      <nav class="desktop-nav" aria-label="Негизги меню">
+        <a href="#offers" class="nav-link active" data-i18n="navOffers">Сунуштар</a>
+        <a href="#categories" class="nav-link" data-i18n="navCategories">Категориялар</a>
+        <a href="#how" class="nav-link" data-i18n="navHow">Кантип иштейт?</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Тилди тандоо">
+          <button type="button" data-lang="ky" class="lang-btn active" aria-pressed="true">KG</button>
+          <button type="button" data-lang="ru" class="lang-btn" aria-pressed="false">RU</button>
+        </div>
+        <button type="button" class="button button-dark button-small" data-open-create>
+          <span class="button-plus">＋</span><span data-i18n="postAd">Жарыя кошуу</span>
+        </button>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Менюну ачуу" aria-expanded="false">☰</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#offers" data-i18n="navOffers">Сунуштар</a>
+      <a href="#categories" data-i18n="navCategories">Категориялар</a>
+      <a href="#how" data-i18n="navHow">Кантип иштейт?</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-section">
+      <div class="hero-orb hero-orb-one"></div><div class="hero-orb hero-orb-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-icon">✳</span><span data-i18n="heroEyebrow">Жаңыча үнөмдөөнүн жолу</span></div>
+          <h1 data-i18n="heroTitle">Керектүүңдү тап.<br><span>Пайданы өткөрбө.</span></h1>
+          <p class="hero-description" data-i18n="heroDescription">Товарлар, пайдалуу сунуштар, жумуш жана кызматтар. Кыргызстан боюнча бир жерден изде.</p>
+
+          <form id="searchForm" class="search-panel">
+            <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg></span>
+            <label class="sr-only" for="searchInput" data-i18n="searchLabel">Эмне издеп жатасыз?</label>
+            <input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Эмне издеп жатасыз? Мисалы, блендер..." autocomplete="off">
+            <button class="button button-lime search-submit" type="submit" data-i18n="searchButton">Издөө <span>→</span></button>
+          </form>
+          <div class="popular-searches"><span data-i18n="popular">Популярдуу:</span>
+            <button type="button" class="search-chip" data-search-term="блендер" data-search-term-ru="блендер"># <span data-i18n="popularBlender">Блендер</span></button>
+            <button type="button" class="search-chip" data-search-term="жумуш" data-search-term-ru="работа"># <span data-i18n="popularJobs">Жумуш</span></button>
+            <button type="button" class="search-chip" data-search-term="сантехник" data-search-term-ru="сантехник"># <span data-i18n="popularServices">Усталар</span></button>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="PAIDA KG платформасынын визуалдык макети">
+          <div class="visual-backdrop"></div>
+          <div class="visual-card visual-card-main">
+            <div class="visual-card-top"><span class="mini-label" data-i18n="todayPick">БҮГҮНКҮ ТАНДОО</span><span class="sparkle">✦</span></div>
+            <div class="visual-product-illustration"><div class="product-glow"></div><span class="visual-emoji">🛍️</span><span class="floating-star star-a">✦</span><span class="floating-star star-b">✳</span></div>
+            <div class="visual-product-bottom"><div><strong data-i18n="visualTitle">Пайдалуу сунуштарды тап</strong><small data-i18n="visualSubtitle">Күн сайын жаңы мүмкүнчүлүктөр</small></div><span class="round-arrow">↗</span></div>
+          </div>
+          <div class="floating-note floating-note-top"><span class="floating-note-icon">⌕</span><span><strong data-i18n="floatSearchTitle">Бир издөө</strong><small data-i18n="floatSearchText">Көп мүмкүнчүлүк</small></span></div>
+          <div class="floating-note floating-note-bottom"><span class="floating-note-icon lime-icon">✓</span><span><strong data-i18n="floatSimpleTitle">Оңой жана тез</strong><small data-i18n="floatSimpleText">KG · RU</small></span></div>
+          <div class="visual-decoration decoration-one"></div><div class="visual-decoration decoration-two"></div>
+        </div>
+      </div>
+      <div class="container hero-bottom-row">
+        <div class="hero-benefit"><span class="benefit-check">✓</span><span data-i18n="benefitOne">Бүт Кыргызстан боюнча</span></div>
+        <div class="hero-benefit"><span class="benefit-check">✓</span><span data-i18n="benefitTwo">Кыргызча жана орусча</span></div>
+        <div class="hero-benefit"><span class="benefit-check">✓</span><span data-i18n="benefitThree">Жеңил жана түшүнүктүү</span></div>
+      </div>
+    </section>
+
+    <section class="container category-section" id="categories">
+      <div class="section-heading section-heading-tight"><div><span class="section-kicker" data-i18n="browseLabel">ИЗДӨӨНҮ БАШТА</span><h2 data-i18n="categoriesTitle">Эмне керек болуп жатат?</h2></div><a class="text-link" href="#offers" data-i18n="allOffers">Бардык сунуштар <span>↗</span></a></div>
+      <div class="category-grid">
+        <button class="category-card category-card-green" data-filter="product"><span class="category-icon">🛒</span><span class="category-info"><strong data-i18n="catProducts">Товарлар</strong><small data-i18n="catProductsHint">Сатып алуу жана сатуу</small></span><span class="category-arrow">↗</span></button>
+        <button class="category-card category-card-yellow" data-filter="deal"><span class="category-icon">🏷️</span><span class="category-info"><strong data-i18n="catDeals">Арзандатуулар</strong><small data-i18n="catDealsHint">Пайдалуу баалар</small></span><span class="category-arrow">↗</span></button>
+        <button class="category-card category-card-blue" data-filter="job"><span class="category-icon">💼</span><span class="category-info"><strong data-i18n="catJobs">Жумуш</strong><small data-i18n="catJobsHint">Жаңы мүмкүнчүлүктөр</small></span><span class="category-arrow">↗</span></button>
+        <button class="category-card category-card-pink" data-filter="service"><span class="category-icon">🛠️</span><span class="category-info"><strong data-i18n="catServices">Кызматтар</strong><small data-i18n="catServicesHint">Адистерди табыңыз</small></span><span class="category-arrow">↗</span></button>
+      </div>
+    </section>
+
+    <section class="offers-section" id="offers">
+      <div class="container">
+        <div class="section-heading offers-heading"><div><span class="section-kicker" data-i18n="freshLabel">ЖАҢЫ МҮМКҮНЧҮЛҮКТӨР</span><h2 data-i18n="offersTitle">Пайдалуу сунуштар</h2><p data-i18n="offersSubtitle">Өзүңүзгө керектүүсүн табыңыз же бааларды салыштырыңыз.</p></div><div class="offer-controls"><button id="favoritesToggle" class="button button-outline button-small"><span>♡</span> <span data-i18n="favorites">Сакталгандар</span> <span class="favorite-count" id="favoriteCount">0</span></button></div></div>
+
+        <div class="demo-notice"><span class="demo-notice-icon">ⓘ</span><span data-i18n="demoNotice">Бул версияда көрсөтүлгөн жарыялар — демонстрация үчүн. Азырынча чыныгы сатуучу же жумуш берүүчү менен байланышпайт.</span></div>
+
+        <div class="filter-toolbar">
+          <div class="filter-tabs" role="group" aria-label="Сунуштарды чыпкалоо">
+            <button class="filter-tab active" data-filter="all" data-i18n="filterAll">Баары</button>
+            <button class="filter-tab" data-filter="deal" data-i18n="filterDeals">Арзандатуулар</button>
+            <button class="filter-tab" data-filter="product" data-i18n="filterProducts">Товарлар</button>
+            <button class="filter-tab" data-filter="job" data-i18n="filterJobs">Жумуш</button>
+            <button class="filter-tab" data-filter="service" data-i18n="filterServices">Кызматтар</button>
+          </div>
+          <label class="sort-control"><span data-i18n="sortLabel">Иреттөө:</span><select id="sortSelect"><option value="newest" data-i18n="sortNewest">Жаңылары</option><option value="low" data-i18n="sortLow">Баасы төмөндөн</option><option value="high" data-i18n="sortHigh">Баасы жогорудан</option></select></label>
+        </div>
+
+        <div class="result-summary"><span id="resultCount">8</span> <span data-i18n="resultWord">сунуш</span><span class="summary-divider">·</span><span id="regionSummary" data-i18n="allKyrgyzstan">Бүт Кыргызстан</span></div>
+        <div class="listing-grid" id="listingGrid" aria-live="polite"></div>
+        <div class="empty-state hidden" id="emptyState"><span class="empty-icon">⌕</span><h3 data-i18n="emptyTitle">Азырынча эч нерсе табылган жок</h3><p data-i18n="emptyText">Издөө сөзүн же аймакты өзгөртүп көрүңүз.</p><button id="resetFilters" class="button button-dark button-small" data-i18n="resetButton">Чыпкаларды тазалоо</button></div>
+        <div class="load-more-row"><button class="button button-outline load-more" id="showAllButton"><span data-i18n="showMore">Дагы көрүү</span> <span>↓</span></button></div>
+      </div>
+    </section>
+
+    <section class="regions-section">
+      <div class="container regions-layout"><div><span class="section-kicker" data-i18n="regionsKicker">ӨЗҮҢҮЗГӨ ЖАКЫН</span><h2 data-i18n="regionsTitle">Кыргызстандын кайсы жеринде болбоңуз</h2><p data-i18n="regionsText">Аймагыңызды тандап, өзүңүзгө жакын сунуштарды караңыз.</p></div><div class="region-chips" id="regionChips"><button class="region-chip active" data-region="all" data-i18n="allKyrgyzstan">Бүт Кыргызстан</button><button class="region-chip" data-region="Бишкек">Бишкек</button><button class="region-chip" data-region="Ош">Ош</button><button class="region-chip" data-region="Жалал-Абад">Жалал-Абад</button><button class="region-chip" data-region="Ысык-Көл">Ысык-Көл</button><button class="region-chip" data-region="Чүй">Чүй</button><button class="region-chip" data-region="Нарын">Нарын</button><button class="region-chip" data-region="Талас">Талас</button><button class="region-chip" data-region="Баткен">Баткен</button></div></div>
+    </section>
+
+    <section class="how-section container" id="how">
+      <div class="section-heading"><div><span class="section-kicker" data-i18n="howKicker">ЖӨНӨКӨЙ БАШТАЛЫШ</span><h2 data-i18n="howTitle">Үч кадам. Керектүү нерсе табылды.</h2></div></div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-number">01</span><span class="step-icon">⌕</span><h3 data-i18n="stepOneTitle">Издеңиз</h3><p data-i18n="stepOneText">Керектүү товарды, сунушту же кызматты жазыңыз.</p></article>
+        <article class="step-card"><span class="step-number">02</span><span class="step-icon">⌖</span><h3 data-i18n="stepTwoTitle">Салыштырыңыз</h3><p data-i18n="stepTwoText">Аймак жана категория боюнча ылайыктуу варианттарды табыңыз.</p></article>
+        <article class="step-card"><span class="step-number">03</span><span class="step-icon">♡</span><h3 data-i18n="stepThreeTitle">Сактаңыз</h3><p data-i18n="stepThreeText">Жаккан сунуштарды сактап коюңуз. Бул демо версияда алар түзмөгүңүздө сакталат.</p></article>
+      </div>
+    </section>
+
+    <section class="cta-section container"><div class="cta-panel"><div class="cta-pattern"></div><div class="cta-copy"><span class="cta-kicker" data-i18n="ctaKicker">ӨЗҮҢҮЗДҮН СУНУШУҢУЗ БАРБЫ?</span><h2 data-i18n="ctaTitle">Башкаларга да пайдалуу болсун.</h2><p data-i18n="ctaText">Товар, жумуш же кызмат жөнүндө жарыя кошуп көрүңүз. Демо режимде ал ушул түзмөктө гана сакталат.</p><button class="button button-lime" data-open-create><span data-i18n="postAd">Жарыя кошуу</span> <span>↗</span></button></div><div class="cta-illustration"><div class="cta-circle"><span>＋</span></div><div class="cta-tag tag-one">🛍️ <span data-i18n="ctaTagOne">Товарлар</span></div><div class="cta-tag tag-two">💼 <span data-i18n="ctaTagTwo">Жумуш</span></div><div class="cta-tag tag-three">🛠️ <span data-i18n="ctaTagThree">Кызматтар</span></div></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-main"><div class="footer-brand-col"><a class="brand brand-footer" href="#top"><span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 10.5A4.5 4.5 0 0 1 12.5 6h12A10.5 10.5 0 0 1 35 16.5 10.5 10.5 0 0 1 24.5 27H18v7H8V10.5Z" fill="currentColor"/><path d="M18 14h6.2a2.8 2.8 0 1 1 0 5.6H18V14Z" fill="#d6f36a"/></svg></span><span class="brand-word">PAIDA<span>KG</span></span></a><p data-i18n="footerDescription">Кыргызстан үчүн пайдалуу мүмкүнчүлүктөрдү бир жерге чогултуучу платформа.</p></div><div class="footer-column"><strong data-i18n="footerPlatform">Платформа</strong><a href="#offers" data-i18n="navOffers">Сунуштар</a><a href="#categories" data-i18n="navCategories">Категориялар</a><a href="#how" data-i18n="navHow">Кантип иштейт?</a></div><div class="footer-column"><strong data-i18n="footerImportant">Маанилүү</strong><a href="#how" data-i18n="footerSafety">Коопсуз колдонуу</a><a href="#top" data-i18n="footerAbout">Долбоор жөнүндө</a></div><div class="footer-note"><span class="footer-note-icon">ⓘ</span><p data-i18n="footerDemo">Азыркы версия — прототип. Чыныгы жарыяларды жарыялоо үчүн сервер, маалымат базасы жана модерация керек.</p></div></div><div class="container footer-bottom"><span>© <span id="year"></span> PAIDA KG</span><span data-i18n="footerTagline">Тап. Салыштыр. Үнөмдө.</span><span class="prototype-label" data-i18n="prototypeLabel">ДЕМО ВЕРСИЯ</span></div></footer>
+
+  <div class="modal-backdrop hidden" id="listingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card"><button class="modal-close" type="button" data-close-modal aria-label="Жабуу">×</button><div class="modal-topline"><span class="modal-icon">＋</span><div><span class="section-kicker" data-i18n="formKicker">ЖАҢЫ ЖАРЫЯ</span><h2 id="modalTitle" data-i18n="formTitle">Жарыя кошуу</h2></div></div><p class="modal-description" data-i18n="formDescription">Бул прототипте жарыя ушул түзмөктө гана сакталат. Кийин сервер кошулганда, жалпыга жарыялоо мүмкүн болот.</p>
+      <form id="listingForm" class="listing-form">
+        <label><span data-i18n="formName">Жарыянын аталышы</span><input type="text" id="newTitle" maxlength="80" required data-i18n-placeholder="formNamePlaceholder" placeholder="Мисалы: Блендер сатылат"></label>
+        <div class="form-row"><label><span data-i18n="formCategory">Категория</span><select id="newCategory" required><option value="product" data-i18n="catProducts">Товарлар</option><option value="deal" data-i18n="catDeals">Арзандатуулар</option><option value="job" data-i18n="catJobs">Жумуш</option><option value="service" data-i18n="catServices">Кызматтар</option></select></label><label><span data-i18n="formPrice">Баасы (сом)</span><input type="number" id="newPrice" min="0" max="100000000" step="1" required placeholder="2500"></label></div>
+        <label><span data-i18n="formRegion">Шаар же аймак</span><select id="newRegion" required><option value="Бишкек">Бишкек</option><option value="Ош">Ош</option><option value="Жалал-Абад">Жалал-Абад</option><option value="Ысык-Көл">Ысык-Көл</option><option value="Чүй">Чүй</option><option value="Нарын">Нарын</option><option value="Талас">Талас</option><option value="Баткен">Баткен</option></select></label>
+        <label><span data-i18n="formDescriptionLabel">Кыскача маалымат</span><textarea id="newDescription" rows="3" maxlength="240" data-i18n-placeholder="formDescriptionPlaceholder" placeholder="Жарыя жөнүндө кыскача жазыңыз..."></textarea></label>
+        <div class="form-notice"><span>ⓘ</span><span data-i18n="formNotice">Телефон номери же жеке маалымат жазбаңыз. Бул демо маалымат башка адамдарга көрүнбөйт.</span></div>
+        <button type="submit" class="button button-dark form-submit"><span data-i18n="formSubmit">Демо жарыяны сактоо</span> <span>→</span></button>
+      </form>
+    </div>
+  </div>
+  <div class="modal-backdrop hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="modal-card detail-modal-card"><button class="modal-close" type="button" data-close-modal aria-label="Жабуу">×</button><div class="detail-art" id="detailArt"><span id="detailEmoji">🛍️</span></div><div class="detail-content"><span class="demo-badge" data-i18n="demoBadge">ДЕМО</span><h2 id="detailTitle"></h2><div class="detail-price" id="detailPrice"></div><p class="detail-location" id="detailLocation"></p><p id="detailDescription"></p><div class="detail-info-note" data-i18n="detailNote">Бул мисал жарыясы. Ал чыныгы сунуш эмес жана сатуучу менен байланышпайт.</div><button class="button button-outline detail-save" id="detailSave">♡ <span data-i18n="saveOffer">Сактоо</span></button></div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
