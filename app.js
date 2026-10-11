@@ -4,6 +4,9 @@
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   const STORAGE_LISTINGS = 'paidaKgDemoListingsV1';
   const STORAGE_FAVORITES = 'paidaKgFavoritesV1';
+  const API_BASE = String(window.PAIDA_API_BASE || '').trim().replace(/\/+$/, '');
+  const API_ENABLED = /^https:\/\//i.test(API_BASE);
+  let cloudListings = [];
   let lang = 'ky';
   let activeFilter = 'all';
   let favoritesOnly = false;
@@ -19,7 +22,7 @@
       freshLabel: 'ЖАҢЫ МҮМКҮНЧҮЛҮКТӨР', offersTitle: 'Пайдалуу сунуштар', offersSubtitle: 'Өзүңүзгө керектүүсүн табыңыз же бааларды салыштырыңыз.', favorites: 'Сакталгандар', demoNotice: 'Бул версияда көрсөтүлгөн жарыялар — демонстрация үчүн. Азырынча чыныгы сатуучу же жумуш берүүчү менен байланышпайт.', filterAll: 'Баары', filterDeals: 'Арзандатуулар', filterProducts: 'Товарлар', filterJobs: 'Жумуш', filterServices: 'Кызматтар', sortLabel: 'Иреттөө:', sortNewest: 'Жаңылары', sortLow: 'Баасы төмөндөн', sortHigh: 'Баасы жогорудан', resultWord: 'сунуш', emptyTitle: 'Азырынча эч нерсе табылган жок', emptyText: 'Издөө сөзүн же аймакты өзгөртүп көрүңүз.', resetButton: 'Чыпкаларды тазалоо', showMore: 'Дагы көрүү', showLess: 'Аз көрсөтүү',
       regionsKicker: 'ӨЗҮҢҮЗГӨ ЖАКЫН', regionsTitle: 'Кыргызстандын кайсы жеринде болбоңуз', regionsText: 'Аймагыңызды тандап, өзүңүзгө жакын сунуштарды караңыз.', howKicker: 'ЖӨНӨКӨЙ БАШТАЛЫШ', howTitle: 'Үч кадам. Керектүү нерсе табылды.', stepOneTitle: 'Издеңиз', stepOneText: 'Керектүү товарды, сунушту же кызматты жазыңыз.', stepTwoTitle: 'Салыштырыңыз', stepTwoText: 'Аймак жана категория боюнча ылайыктуу варианттарды табыңыз.', stepThreeTitle: 'Сактаңыз', stepThreeText: 'Жаккан сунуштарды сактап коюңуз. Бул демо версияда алар түзмөгүңүздө сакталат.', ctaKicker: 'ӨЗҮҢҮЗДҮН СУНУШУҢУЗ БАРБЫ?', ctaTitle: 'Башкаларга да пайдалуу болсун.', ctaText: 'Товар, жумуш же кызмат жөнүндө жарыя кошуп көрүңүз. Демо режимде ал ушул түзмөктө гана сакталат.', ctaTagOne: 'Товарлар', ctaTagTwo: 'Жумуш', ctaTagThree: 'Кызматтар',
       footerDescription: 'Кыргызстан үчүн пайдалуу мүмкүнчүлүктөрдү бир жерге чогултуучу платформа.', footerPlatform: 'Платформа', footerImportant: 'Маанилүү', footerSafety: 'Коопсуз колдонуу', footerAbout: 'Долбоор жөнүндө', footerDemo: 'Азыркы версия — прототип. Чыныгы жарыяларды жарыялоо үчүн сервер, маалымат базасы жана модерация керек.', footerTagline: 'Тап. Салыштыр. Үнөмдө.', prototypeLabel: 'ДЕМО ВЕРСИЯ', formKicker: 'ЖАҢЫ ЖАРЫЯ', formTitle: 'Жарыя кошуу', formDescription: 'Бул прототипте жарыя ушул түзмөктө гана сакталат. Кийин сервер кошулганда, жалпыга жарыялоо мүмкүн болот.', formName: 'Жарыянын аталышы', formNamePlaceholder: 'Мисалы: Блендер сатылат', formCategory: 'Категория', formPrice: 'Баасы (сом)', formRegion: 'Шаар же аймак', formDescriptionLabel: 'Кыскача маалымат', formDescriptionPlaceholder: 'Жарыя жөнүндө кыскача жазыңыз...', formNotice: 'Телефон номери же жеке маалымат жазбаңыз. Бул демо маалымат башка адамдарга көрүнбөйт.', formSubmit: 'Демо жарыяны сактоо', demoBadge: 'ДЕМО', detailNote: 'Бул мисал жарыясы. Ал чыныгы сунуш эмес жана сатуучу менен байланышпайт.', saveOffer: 'Сактоо', savedOffer: 'Сакталды', removedFavorite: 'Сакталгандардан алынды', savedToast: 'Жарыя ушул түзмөктө сакталды. Башкаларга көрсөтүү үчүн сервер керек.', requiredFields: 'Милдеттүү талааларды толтуруңуз.', searchNoResults: 'Бул издөө боюнча сунуш табылган жок.', favoritesEmpty: 'Азырынча сакталган сунуш жок.', defaultLocation: 'Кыргызстан', priceOnRequest: 'Баасы сүйлөшүлөт', perShift: '/ смена', from: 'баштап',
-      typeLabels: {deal:'Арзандатуу',product:'Товар',job:'Жумуш',service:'Кызмат'}, cardTypes: {deal:'АРЗАНДАТУУ',product:'ТОВАР',job:'ЖУМУШ',service:'КЫЗМАТ'}
+      typeLabels: {deal:'Арзандатуу',product:'Товар',job:'Жумуш',service:'Кызмат'}, cardTypes: {deal:'АРЗАНДАТУУ',product:'ТОВАР',job:'ЖУМУШ',service:'КЫЗМАТ'}, publishedBadge:'ЖАРЫЯЛАНДЫ', publishedMeta:'Жарыяланды', exampleMeta:'Мисал'
     },
     ru: {
       topline: 'Полезные предложения по всему Кыргызстану — в одном месте', freeSearch: 'Поиск бесплатный', chooseRegion: 'Выберите регион', allKyrgyzstan: 'Весь Кыргызстан', navOffers: 'Предложения', navCategories: 'Категории', navHow: 'Как это работает?', postAd: 'Добавить объявление',
@@ -28,7 +31,7 @@
       freshLabel: 'НОВЫЕ ВОЗМОЖНОСТИ', offersTitle: 'Полезные предложения', offersSubtitle: 'Находите нужное или сравнивайте цены.', favorites: 'Сохранённое', demoNotice: 'Объявления в этой версии демонстрационные. Сейчас они не связаны с реальными продавцами или работодателями.', filterAll: 'Все', filterDeals: 'Скидки', filterProducts: 'Товары', filterJobs: 'Работа', filterServices: 'Услуги', sortLabel: 'Сортировка:', sortNewest: 'Сначала новые', sortLow: 'Сначала дешевле', sortHigh: 'Сначала дороже', resultWord: 'предложений', emptyTitle: 'Пока ничего не найдено', emptyText: 'Попробуйте изменить запрос или регион.', resetButton: 'Сбросить фильтры', showMore: 'Показать ещё', showLess: 'Свернуть',
       regionsKicker: 'РЯДОМ С ВАМИ', regionsTitle: 'Где бы вы ни находились в Кыргызстане', regionsText: 'Выберите регион и просмотрите предложения поблизости.', howKicker: 'ПРОСТОЕ НАЧАЛО', howTitle: 'Три шага. Нужное найдено.', stepOneTitle: 'Ищите', stepOneText: 'Введите товар, предложение или услугу, которая вам нужна.', stepTwoTitle: 'Сравнивайте', stepTwoText: 'Находите подходящие варианты по региону и категории.', stepThreeTitle: 'Сохраняйте', stepThreeText: 'Добавляйте понравившиеся предложения в избранное. В демо-версии они хранятся на вашем устройстве.', ctaKicker: 'ЕСТЬ ЧТО ПРЕДЛОЖИТЬ?', ctaTitle: 'Пусть это пригодится другим.', ctaText: 'Попробуйте добавить товар, работу или услугу. В демо-режиме объявление сохранится только на этом устройстве.', ctaTagOne: 'Товары', ctaTagTwo: 'Работа', ctaTagThree: 'Услуги',
       footerDescription: 'Платформа полезных возможностей для жителей Кыргызстана.', footerPlatform: 'Платформа', footerImportant: 'Важно', footerSafety: 'Безопасное использование', footerAbout: 'О проекте', footerDemo: 'Текущая версия — прототип. Для публикации реальных объявлений нужны сервер, база данных и модерация.', footerTagline: 'Найдите. Сравните. Сэкономьте.', prototypeLabel: 'ДЕМО-ВЕРСИЯ', formKicker: 'НОВОЕ ОБЪЯВЛЕНИЕ', formTitle: 'Добавить объявление', formDescription: 'В этом прототипе объявление сохраняется только на этом устройстве. После подключения сервера его можно будет публиковать для всех.', formName: 'Название объявления', formNamePlaceholder: 'Например: Продаю блендер', formCategory: 'Категория', formPrice: 'Цена (сом)', formRegion: 'Город или регион', formDescriptionLabel: 'Краткое описание', formDescriptionPlaceholder: 'Кратко опишите предложение...', formNotice: 'Не указывайте номер телефона или личные данные. Это демо-объявление не будет видно другим людям.', formSubmit: 'Сохранить демо-объявление', demoBadge: 'ДЕМО', detailNote: 'Это пример объявления. Оно не является реальным предложением и не связано с продавцом.', saveOffer: 'Сохранить', savedOffer: 'Сохранено', removedFavorite: 'Удалено из сохранённого', savedToast: 'Объявление сохранено на этом устройстве. Чтобы показывать его другим, нужен сервер.', requiredFields: 'Заполните обязательные поля.', searchNoResults: 'По этому запросу предложений не найдено.', favoritesEmpty: 'Пока нет сохранённых предложений.', defaultLocation: 'Кыргызстан', priceOnRequest: 'Цена договорная', perShift: '/ смена', from: 'от',
-      typeLabels: {deal:'Скидка',product:'Товар',job:'Работа',service:'Услуга'}, cardTypes: {deal:'СКИДКА',product:'ТОВАР',job:'РАБОТА',service:'УСЛУГА'}
+      typeLabels: {deal:'Скидка',product:'Товар',job:'Работа',service:'Услуга'}, cardTypes: {deal:'СКИДКА',product:'ТОВАР',job:'РАБОТА',service:'УСЛУГА'}, publishedBadge:'ОПУБЛИКОВАНО', publishedMeta:'Опубликовано', exampleMeta:'Пример'
     }
   };
 
@@ -52,15 +55,64 @@
   if (!Array.isArray(Array.from(favorites))) favorites = new Set();
   function saveFavorites() { try { localStorage.setItem(STORAGE_FAVORITES, JSON.stringify(Array.from(favorites))); } catch (_) {} }
   function saveListings() { try { localStorage.setItem(STORAGE_LISTINGS, JSON.stringify(userListings)); } catch (_) {} }
-  function t(key) { return copy[lang][key] ?? copy.ky[key] ?? key; }
+  function t(key) {
+    if (API_ENABLED) {
+      const liveCopy = {
+        ky: {
+          demoNotice: 'ДЕМО деп белгиленген карточкалар гана мисал. Жарыяланган коомдук сунуштар серверден жүктөлөт.',
+          prototypeLabel: 'ПИЛОТТУК ВЕРСИЯ',
+          formDescription: 'Жарыя серверге жөнөтүлөт. Модерациядан өткөндөн кийин жалпы тизмеде көрүнөт.',
+          formNotice: 'Жарыя текшерүүдөн өткөндөн кийин гана башкаларга көрүнөт. Телефон же жеке маалымат жазбаңыз.',
+          formSubmit: 'Текшерүүгө жөнөтүү',
+          savedToast: 'Жарыя текшерүүгө жөнөтүлдү. Жактырылгандан кийин сайтта көрүнөт.',
+          footerDemo: 'Коомдук жарыялар серверде сакталат. Жарыялар текшерүүдөн өткөндөн кийин гана көрсөтүлөт.',
+          ctaText: 'Товар, жумуш же кызмат боюнча жарыя жөнөтүңүз. Жарыя модерациядан өткөндөн кийин жалпыга чыгат.',
+          stepThreeText: 'Жаккан сунуштарды сактап коюңуз. Сакталган тизмеңиз ушул түзмөктө калат.'
+        },
+        ru: {
+          demoNotice: 'Только карточки с пометкой ДЕМО являются примерами. Опубликованные объявления загружаются с сервера.',
+          prototypeLabel: 'ПИЛОТНАЯ ВЕРСИЯ',
+          formDescription: 'Объявление отправится на сервер и появится в общей ленте после модерации.',
+          formNotice: 'Объявление станет видно другим только после проверки. Не указывайте телефон и личные данные.',
+          formSubmit: 'Отправить на проверку',
+          savedToast: 'Объявление отправлено на проверку. Оно появится на сайте после одобрения.',
+          footerDemo: 'Публичные объявления хранятся на сервере. Они показываются только после проверки.',
+          ctaText: 'Отправьте объявление о товаре, работе или услуге. Оно появится после модерации.',
+          stepThreeText: 'Сохраняйте понравившиеся предложения. Список избранного хранится на этом устройстве.'
+        }
+      };
+      if (liveCopy[lang] && liveCopy[lang][key]) return liveCopy[lang][key];
+    }
+    return copy[lang][key] ?? copy.ky[key] ?? key;
+  }
   function esc(value) { return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
   function translatePage() {
     document.documentElement.lang = lang;
     document.title = lang === 'ky' ? 'PAIDA KG — Пайдалуу нерсенин баары' : 'PAIDA KG — Полезные возможности в одном месте';
-    $$('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (copy[lang][key] != null) el.innerHTML = copy[lang][key]; });
-    $$('[data-i18n-placeholder]').forEach(el => { const key = el.dataset.i18nPlaceholder; if (copy[lang][key] != null) el.placeholder = copy[lang][key]; });
+    $$('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (t(key) != null) el.innerHTML = t(key); });
+    $$('[data-i18n-placeholder]').forEach(el => { const key = el.dataset.i18nPlaceholder; if (t(key) != null) el.placeholder = t(key); });
     $$('[data-lang]').forEach(btn => { const isActive = btn.dataset.lang === lang; btn.classList.toggle('active', isActive); btn.setAttribute('aria-pressed', String(isActive)); });
     $('#regionSelect').setAttribute('aria-label', t('chooseRegion'));
+    if (API_ENABLED) {
+      const formDescription = $('[data-i18n="formDescription"]');
+      const formNotice = $('[data-i18n="formNotice"]');
+      const formSubmit = $('#listingForm button[type="submit"] [data-i18n="formSubmit"]');
+      const footerDemo = $('[data-i18n="footerDemo"]');
+      const ctaText = $('[data-i18n="ctaText"]');
+      if (formDescription) formDescription.textContent = lang === 'ky'
+        ? 'Жарыя серверге жөнөтүлөт. Модерациядан өткөндөн кийин жалпыга көрүнөт.'
+        : 'Объявление отправится на сервер и станет общедоступным после модерации.';
+      if (formNotice) formNotice.textContent = lang === 'ky'
+        ? 'Телефон же жеке маалыматты жарыялабаңыз. Жарыя текшерүүдөн өткөнгө чейин көрүнбөйт.'
+        : 'Не публикуйте телефон и личные данные. Объявление не будет видно до проверки.';
+      if (formSubmit) formSubmit.textContent = lang === 'ky' ? 'Текшерүүгө жөнөтүү' : 'Отправить на проверку';
+      if (footerDemo) footerDemo.textContent = lang === 'ky'
+        ? 'Жаңы жарыялар модерациядан кийин жарыяланат. «ДЕМО» белгилүү карточкалар мисал үчүн гана көрсөтүлгөн.'
+        : 'Новые объявления публикуются после модерации. Карточки с пометкой «ДЕМО» приведены только для примера.';
+      if (ctaText) ctaText.textContent = lang === 'ky'
+        ? 'Товар, жумуш же кызмат тууралуу жарыя кошуңуз. Жарыя текшерүүгө жөнөтүлөт.'
+        : 'Добавьте объявление о товаре, работе или услуге. Оно будет отправлено на проверку.';
+    }
     renderListings();
   }
   function getTitle(item) { return item.title && typeof item.title === 'object' ? (item.title[lang] || item.title.ky || '') : String(item.title || ''); }
@@ -76,7 +128,7 @@
     if (unit === 'смена') unitDisplay = t('perShift');
     return `<span class="listing-price">${formatted} <small>сом ${unitDisplay && unitDisplay !== 'бир даана' && unitDisplay !== 'за штуку' && unitDisplay !== 'топтом' && unitDisplay !== 'за набор' ? esc(unitDisplay) : ''}</small></span>`;
   }
-  function allListings() { return [...demoListings, ...userListings]; }
+  function allListings() { return [...demoListings, ...(API_ENABLED ? [] : userListings), ...cloudListings]; }
   function currentRegion() { return $('#regionSelect').value || 'all'; }
   function filteredListings() {
     let items = allListings();
@@ -98,12 +150,14 @@
     const detailTitle = esc(getTitle(item));
     const detailDescription = esc(getDescription(item));
     const location = esc(item.city || item.region || t('defaultLocation'));
+    const publishedBadge = item.isRemote ? `<span class="listing-type-pill published">${esc(t('publishedBadge'))}</span>` : `<span class="listing-type-pill demo">${esc(t('demoBadge'))}</span>`;
+    const metaLabel = item.isRemote ? t('publishedMeta') : t('exampleMeta');
     return `<article class="listing-card" data-id="${esc(item.id)}" tabindex="0" role="button" aria-label="${detailTitle}">
       <div class="listing-art ${esc(item.art || ({deal:'art-deal',product:'art-product',job:'art-job',service:'art-service'}[item.type] || 'art-product'))}">
-        <span class="listing-type-pill">${esc(typeLabel)}</span><span class="listing-type-pill demo">${esc(lang === 'ky' ? 'ДЕМО' : 'ДЕМО')}</span><span class="listing-emoji" aria-hidden="true">${esc(item.emoji || '📌')}</span>
+        <span class="listing-type-pill">${esc(typeLabel)}</span>${publishedBadge}<span class="listing-emoji" aria-hidden="true">${esc(item.emoji || '📌')}</span>
         <button type="button" class="favorite-btn ${isSaved?'saved':''}" data-favorite="${esc(item.id)}" aria-label="${isSaved ? esc(t('removedFavorite')) : esc(t('saveOffer'))}" aria-pressed="${isSaved}">${isSaved?'♥':'♡'}</button>
       </div>
-      <div class="listing-body"><div class="listing-meta"><span class="listing-location"><span>⌖</span>${location}</span><span>${esc(lang === 'ky' ? 'Мисал' : 'Пример')}</span></div><h3>${detailTitle}</h3><p class="listing-card-description">${detailDescription}</p><div class="listing-price-row">${formatPrice(item)}<button class="listing-open" type="button" data-open-detail="${esc(item.id)}" aria-label="${lang==='ky'?'Көбүрөөк маалымат':'Подробнее'}">↗</button></div></div></article>`;
+      <div class="listing-body"><div class="listing-meta"><span class="listing-location"><span>⌖</span>${location}</span><span>${esc(metaLabel)}</span></div><h3>${detailTitle}</h3><p class="listing-card-description">${detailDescription}</p><div class="listing-price-row">${formatPrice(item)}<button class="listing-open" type="button" data-open-detail="${esc(item.id)}" aria-label="${lang==='ky'?'Көбүрөөк маалымат':'Подробнее'}">↗</button></div></div></article>`;
   }
   function renderListings() {
     const items = filteredListings();
@@ -154,14 +208,50 @@
     selectedDetailId = id;
     $('#detailTitle').textContent = getTitle(item);
     $('#detailPrice').innerHTML = formatPrice(item);
-    $('#detailLocation').textContent = `⌖ ${item.city || item.region || t('defaultLocation')} · ${lang==='ky'?'Демо маалымат':'Демо-данные'}`;
+    $('#detailLocation').textContent = `⌖ ${item.city || item.region || t('defaultLocation')} · ${item.isRemote ? t('publishedMeta') : t('exampleMeta')}`;
     $('#detailDescription').textContent = getDescription(item);
     $('#detailEmoji').textContent = item.emoji || '📌';
     $('#detailArt').className = `detail-art ${item.art || ''}`;
+    const note = $('#detailInfoNote');
+    note.classList.toggle('hidden', !!item.isRemote);
+    $('#detailModal [data-i18n="demoBadge"]').textContent = item.isRemote ? t('publishedBadge') : t('demoBadge');
     updateDetailFavoriteButton();
     openModal('#detailModal');
   }
   function changeLanguage(nextLang) { if (!copy[nextLang] || lang === nextLang) return; lang = nextLang; translatePage(); }
+
+  function mapCloudListing(row) {
+    const type = ['deal','product','job','service'].includes(row.type) ? row.type : 'product';
+    const id = String(row.id || '');
+    return {
+      id: `cloud-${id}`,
+      cloudId: id,
+      isRemote: true,
+      type,
+      title: { ky: String(row.title || ''), ru: String(row.title || '') },
+      description: { ky: String(row.description || ''), ru: String(row.description || '') },
+      price: row.price == null ? 0 : Number(row.price),
+      unit: { ky: type === 'job' ? 'смена' : 'бир даана', ru: type === 'job' ? 'смена' : 'за штуку' },
+      city: String(row.city || row.region || ''),
+      region: String(row.region || row.city || ''),
+      emoji: ({ deal:'🏷️', product:'📦', job:'💼', service:'🛠️' })[type],
+      art: ({ deal:'art-deal', product:'art-product', job:'art-job', service:'art-service' })[type],
+      date: row.created_at ? (Date.parse(row.created_at) || 0) : 0
+    };
+  }
+  async function refreshCloudListings() {
+    if (!API_ENABLED) return;
+    try {
+      const response = await fetch(`${API_BASE}/api/listings`, { method: 'GET', headers: { 'Accept': 'application/json' } });
+      if (!response.ok) throw new Error(`API returned ${response.status}`);
+      const data = await response.json();
+      cloudListings = Array.isArray(data.listings) ? data.listings.map(mapCloudListing) : [];
+      renderListings();
+    } catch (error) {
+      console.warn('PAIDA KG could not load public listings:', error);
+      showToast(lang === 'ky' ? 'Серверден жарыяларды алуу мүмкүн болбой жатат.' : 'Не удалось загрузить объявления с сервера.');
+    }
+  }
 
   // Language, filters and search
   $$('[data-lang]').forEach(btn => btn.addEventListener('click', () => changeLanguage(btn.dataset.lang)));
@@ -190,7 +280,7 @@
   $$('[data-close-modal]').forEach(btn => btn.addEventListener('click', closeModals));
   $$('.modal-backdrop').forEach(backdrop => backdrop.addEventListener('click', event => { if (event.target === backdrop) closeModals(); }));
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModals(); });
-  $('#listingForm').addEventListener('submit', event => {
+  $('#listingForm').addEventListener('submit', async event => {
     event.preventDefault();
     const title = $('#newTitle').value.trim();
     const priceRaw = $('#newPrice').value;
@@ -200,6 +290,30 @@
     const description = $('#newDescription').value.trim();
     if (!title || priceRaw === '' || !city || !type || !Number.isFinite(price) || price < 0) { showToast(t('requiredFields')); return; }
     const regionMap = {'Бишкек':'Бишкек','Ош':'Ош','Жалал-Абад':'Жалал-Абад','Ысык-Көл':'Ысык-Көл','Чүй':'Чүй','Нарын':'Нарын','Талас':'Талас','Баткен':'Баткен'};
+    if (API_ENABLED) {
+      const submitButton = $('#listingForm button[type="submit"]');
+      submitButton.disabled = true;
+      try {
+        const response = await fetch(`${API_BASE}/api/listings`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ title, type, price, city, region: regionMap[city] || city, description })
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
+        closeModals(); $('#listingForm').reset();
+        showToast(lang === 'ky'
+          ? 'Жарыя текшерүүгө жөнөтүлдү. Жактырылгандан кийин сайтта көрүнөт.'
+          : 'Объявление отправлено на проверку. Оно появится на сайте после одобрения.');
+        $('#offers').scrollIntoView({behavior:'smooth',block:'start'});
+      } catch (error) {
+        console.error('PAIDA KG submit failed:', error);
+        showToast(lang === 'ky' ? 'Жарыя жөнөтүлгөн жок. Интернетти жана сервер жөндөөлөрүн текшериңиз.' : 'Не удалось отправить объявление. Проверьте интернет и настройки сервера.');
+      } finally {
+        submitButton.disabled = false;
+      }
+      return;
+    }
     const item = {id:`user-${Date.now()}`,type,title:{ky:title,ru:title},description:{ky:description || 'Демо жарыя.',ru:description || 'Демо-объявление.'},price,unit:{ky:'бир даана',ru:'за штуку'},city,region:regionMap[city] || city,emoji:({deal:'🏷️',product:'📦',job:'💼',service:'🛠️'})[type],art:({deal:'art-deal',product:'art-product',job:'art-job',service:'art-service'})[type],date:Date.now(),isUser:true};
     userListings.unshift(item); saveListings(); closeModals(); $('#listingForm').reset(); activeFilter='all'; favoritesOnly=false; visibleLimit=8; $$('.filter-tab').forEach(btn=>btn.classList.toggle('active',btn.dataset.filter==='all')); $('#searchInput').value=''; $('#regionSelect').value='all'; renderListings(); showToast(t('savedToast')); $('#offers').scrollIntoView({behavior:'smooth',block:'start'});
   });
@@ -207,4 +321,5 @@
   $$('#mobileNav a').forEach(a=>a.addEventListener('click',()=>{ $('#mobileNav').classList.remove('open'); $('#mobileMenuBtn').setAttribute('aria-expanded','false'); $('#mobileMenuBtn').textContent='☰'; }));
   $('#year').textContent = new Date().getFullYear();
   translatePage();
+  if (API_ENABLED) refreshCloudListings();
 })();
