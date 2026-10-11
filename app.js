@@ -308,7 +308,8 @@
         $('#offers').scrollIntoView({behavior:'smooth',block:'start'});
       } catch (error) {
         console.error('PAIDA KG submit failed:', error);
-        showToast(lang === 'ky' ? 'Жарыя жөнөтүлгөн жок. Интернетти жана сервер жөндөөлөрүн текшериңиз.' : 'Не удалось отправить объявление. Проверьте интернет и настройки сервера.');
+        const serverMessage = error && typeof error.message === 'string' ? error.message : 'Unknown error';
+        showToast(lang === 'ky' ? `Жарыя жөнөтүлгөн жок: ${serverMessage}` : `Не удалось отправить объявление: ${serverMessage}`);
       } finally {
         submitButton.disabled = false;
       }
